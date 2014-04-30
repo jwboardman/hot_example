@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+/* dot is select by class, hash is select by unique id */
+
+.ui-dialog .cleardiv {
+    clear: both;
+    min-height: 10px;
+}
+
+.ui-widget-content {
+	border: 2px solid #555;
+	background: #eee;
+	color: #333;
+}
+
+.spacespan{
+	margin-left: 8px;
+}
+
+.tab_style {
+    background-color: #FFFFFF;
+    border-radius: 5px 5px 0 0;
+    color: black;
+    font-weight: bold;
+    border: 1px solid grey;
+    padding: 2px;
+    text-align: center;
+	cursor: pointer;
+}
+
+.tab_style_active {
+    background-color: grey;
+    border: 1px solid white;
+    border-radius: 5px 5px 0 0;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 2px;
+    text-align: center;
+}
+
+.hot-contain-div {
+    visibility:visible !important;
+    display:inline !important;
+}
+
+.hot-contain-div_hide {
+    visibility:hidden !important;
+    display:none !important;
+}
+
+.hot_button {
+    border: 1px solid black;
+    border-radius: 4px 4px 4px 4px;
+    cursor: pointer;
+    padding: 3px;
+    text-decoration: none;	
+}
