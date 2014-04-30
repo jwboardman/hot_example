@@ -220,27 +220,27 @@ $.example.fillExampleDialog = function() {
         e.preventDefault();
     });
 
-    var cu_add_row = $('#hot_add_row');
-    cu_add_row.unbind();
-    cu_add_row.click(function(e) {
+    var addRow = $('#hot_add_row');
+    addRow.unbind();
+    addRow.click(function(e) {
         var ht = $(".hot-contain-div").handsontable('getInstance');
         ht.alter('insert_row');
         ht.render();
         e.preventDefault();
     });
 
-    var cu_remove_row = $('#hot_remove_row');
-    cu_remove_row.unbind();
-    cu_remove_row.click(function(e) {
+    var removeRow = $('#hot_remove_row');
+    removeRow.unbind();
+    removeRow.click(function(e) {
         var ht = $(".hot-contain-div").handsontable('getInstance');
         ht.alter('remove_row', ht.countRows() - 1);
         ht.render();
         e.preventDefault();
     });
 
-    var cu_reset_all = $('#hot_reset_all');
-    cu_reset_all.unbind();
-    cu_reset_all.click(function(e) {
+    var resetAll = $('#hot_reset_all');
+    resetAll.unbind();
+    resetAll.click(function(e) {
         $.example.tempColorTable = undefined;
         $.example.tempShapeTable = undefined;
         $.example.destroyExampleTables();
