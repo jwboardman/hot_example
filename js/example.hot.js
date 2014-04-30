@@ -149,26 +149,26 @@ $.example.fillExampleDialog = function() {
         e.preventDefault();
     });
 
-    var cu_apply = $('#hot_apply');
-    cu_apply.unbind();
-    cu_apply.click(function(e) {
+    var hotApply = $('#hot_apply');
+    hotApply.unbind();
+    hotApply.click(function(e) {
         $.example.updateExampleData();
         $.example.destroyExampleTables();
         $.example.exampleDialogs.example.dialog("close");
         e.preventDefault();
     });
 
-    var cu_cancel = $('#hot_cancel');
-    cu_cancel.unbind();
-    cu_cancel.click(function(e) {
+    var hotCancel = $('#hot_cancel');
+    hotCancel.unbind();
+    hotCancel.click(function(e) {
         $.example.destroyExampleTables();
         $.example.exampleDialogs.example.dialog("close");
         e.preventDefault();
     });
 
-    var cu_move_up = $('#hot_move_up');
-    cu_move_up.unbind();
-    cu_move_up.click(function(e) {
+    var hotMoveUp = $('#hot_move_up');
+    hotMoveUp.unbind();
+    hotMoveUp.click(function(e) {
         var ht = $(".hot-contain-div").handsontable('getInstance');
         var selArray = ht.getSelected();
         if (selArray) {
@@ -193,9 +193,9 @@ $.example.fillExampleDialog = function() {
         e.preventDefault();
     });
 
-    var cu_move_down = $('#hot_move_down');
-    cu_move_down.unbind();
-    cu_move_down.click(function(e) {
+    var hotMoveDown = $('#hot_move_down');
+    hotMoveDown.unbind();
+    hotMoveDown.click(function(e) {
         var ht = $(".hot-contain-div").handsontable('getInstance');
         var selArray = ht.getSelected();
         if (selArray) {
