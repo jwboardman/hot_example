@@ -288,54 +288,54 @@ $.example.saveExampleData = function() {
     ht = $("#shape_hot").handsontable('getInstance');
     dataShape = ht.getData();
 
-// Here is what I do to save data...
-//    $.post('/url', {
-//            "action" : "savedata",
-//            "colors" : JSON.stringify(dataColor),
-//            "shapes" : JSON.stringify(dataShape)
-//        },
-//        function (data) {
-//            var obj = jQuery.parseJSON(data);
-//            if (obj.status == 'fail') {
-//            } else {
-//                $.example.exampleDialogs.example.dialog("close");
-//            }
-//        }
-//    );
+    // Here is what I do to save data...
+    $.post('/php/ajaxserver.php', {
+            "action" : "savedata",
+            "colors" : JSON.stringify(dataColor),
+            "shapes" : JSON.stringify(dataShape)
+        },
+        function (data) {
+            var obj = jQuery.parseJSON(data);
+            if (obj.status === 'fail') {
+            } else {
+                $.example.exampleDialogs.example.dialog("close");
+            }
+        }
+    );
 
     $.example.exampleDialogs.example.dialog("close");
 }
 
 $.example.loadExample = function() {
 
-// here's what I do to load data from a php server (I replaced the URL and call for privacy)
-//    var formParams = "call=loaddata";
-//
-//    $.ajax({
-//        type : 'GET',
-//        url : '/url',
-//        async : false,
-//        data : formParams,
-//        complete : function(data) {
-//            data.responseText = data.responseText.replace(/\\/g, '');
-//            var obj = jQuery.parseJSON(data.responseText);
-//            if (obj.status == 'fail') {
-//            } else {
-//                var i;
-//                $.example.tempColorTable = [];
-//                var dataColor = obj.colors;
-//                for (i = 0; i < dataColor.length; i++) {
-//                    $.example.tempColorTable.push({'name' : dataColor[i][0], 'abbrv' : dataColor[i][1], 'rgb' : dataColor[i][2], 'keyorder' : dataColor[i][3]});
-//                }
-//
-//                $.example.tempShapeTable = [];
-//                var dataShape = obj.shapes;
-//                for (i = 0; i < dataShape.length; i++) {
-//                    $.example.tempShapeTable.push({'name' : dataShape[i][0], 'abbrv' : dataShape[i][1], 'sides' : dataTemperature[i][2], 'keyorder' : dataTemperature[i][3]});
-//                }
-//            }
-//        }
-//    });
+	// here's what I do to load data from a php server (I replaced the URL and call for privacy)
+    var formParams = "call=loaddata";
+
+    $.ajax({
+        type : 'GET',
+        url : '/php/ajaxserver.php',
+        async : false,
+        data : formParams,
+        complete : function(data) {
+            data.responseText = data.responseText.replace(/\\/g, '');
+            var obj = jQuery.parseJSON(data.responseText);
+            if (obj.status === 'fail') {
+            } else {
+                var i;
+                $.example.tempColorTable = [];
+                var dataColor = obj.colors;
+                for (i = 0; i < dataColor.length; i++) {
+                    $.example.tempColorTable.push({'name' : dataColor[i][0], 'abbrv' : dataColor[i][1], 'rgb' : dataColor[i][2], 'keyorder' : dataColor[i][3]});
+                }
+
+                $.example.tempShapeTable = [];
+                var dataShape = obj.shapes;
+                for (i = 0; i < dataShape.length; i++) {
+                    $.example.tempShapeTable.push({'name' : dataShape[i][0], 'abbrv' : dataShape[i][1], 'sides' : dataTemperature[i][2], 'keyorder' : dataTemperature[i][3]});
+                }
+            }
+        }
+    });
 };
 
 $.example.showExampleTab = function(option) {
